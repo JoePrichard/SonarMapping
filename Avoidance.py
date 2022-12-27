@@ -36,9 +36,11 @@ while True:
   # Take action based on the distance to the nearest obstacle
   if distance < 20:
     print("Too close! Stopping.")
+    PWM.setMotorModel(0,0,0,0)
     break
   else:
     print("Distance:", distance, "cm")
+    PWM.setMotorModel(2000,2000,2000,2000) 
     time.sleep(0.5)
 
 # Clean up the GPIO pins
